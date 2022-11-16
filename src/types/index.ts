@@ -1,4 +1,4 @@
-type RecommendedBy = {
+export type RecommendedBy = {
   name: string;
   avatar: string;
 };
