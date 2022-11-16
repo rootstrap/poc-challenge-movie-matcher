@@ -11,7 +11,11 @@ const AuthStack = createNativeStackNavigator<StackParamList>();
 
 const AuthNavigator: React.FunctionComponent = () => (
   <AuthStack.Navigator initialRouteName={AppScreens.Welcome}>
-    <AuthStack.Screen name={AppScreens.Welcome} component={WelcomeScreen} />
+    <AuthStack.Screen
+      name={AppScreens.Welcome}
+      component={WelcomeScreen}
+      options={{ headerShown: false }}
+    />
   </AuthStack.Navigator>
 );
 
