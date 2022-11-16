@@ -26,6 +26,7 @@ const AvatarPile = ({ people, ...props }: AvatarPileProps) => {
             data={data}
             keyExtractor={item => item.name}
             renderItem={renderItem}
+            showsHorizontalScrollIndicator={false}
           />
         </View>
       )}
