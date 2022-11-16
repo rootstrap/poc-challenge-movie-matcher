@@ -18,10 +18,12 @@ module.exports = {
         alias: {
           screens: './src/screens',
           constants: './src/constants',
+          components: './src/components',
           network: './src/network',
           storage: './src/storage',
           hooks: './src/hooks',
           navigation: './src/navigation',
+          types: './src/types',
         },
       },
     ],
