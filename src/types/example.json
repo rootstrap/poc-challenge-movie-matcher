@@ -1,0 +1,40 @@
+{
+  "genres": ["Action", "SCI-FI", "Drama"],
+  "recommended_by": [
+    {
+      "name": "Sofi",
+      "avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/d7/d7f64c179408973acf7aeb0aeb9ac3f21cd40c2a.jpg"
+    },
+    {
+      "name": "Nacho",
+      "avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/a3/a3b6aa056df855b239bc5e8342a5bd987f59ac8a.jpg"
+    },
+    {
+      "name": "Charly",
+      "avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/c0/c0947bd922a20a2affc9175dc7251e14c50397c7.jpg"
+    },
+    {
+      "name": "Maru",
+      "avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/bf/bfcb87529e39bbee65f5482c658008fe7f014eb3.jpg"
+    },
+    {
+      "name": "Juli",
+      "avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/2b/2bfbc24517101d2d0d12c7ad1a39420f55aed2e1.jpg"
+    },
+    {
+      "name": "Pablo",
+      "avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/74/74c9bc9750cc2cfdde5b66fdbdfb237d8f265cf7.jpg"
+    }
+  ],
+  "id": 505642,
+  "original_language": "en",
+  "original_title": "Black Panther: Wakanda Forever",
+  "overview": "Queen Ramonda, Shuri, M'Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T'Challa's death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.",
+  "popularity": 4392.866,
+  "poster_path": "https://image.tmdb.org/t/p/original//sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
+  "release_date": "2022-11-09",
+  "title": "Black Panther: Wakanda Forever",
+  "video": false,
+  "vote_average": 7.6,
+  "vote_count": 597
+}

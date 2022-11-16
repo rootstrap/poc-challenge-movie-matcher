@@ -23,6 +23,7 @@ module.exports = {
           storage: './src/storage',
           hooks: './src/hooks',
           navigation: './src/navigation',
+          types: './src/types',
         },
       },
     ],
