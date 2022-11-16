@@ -4,14 +4,14 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
 
-project 'ReactNativeBase',
+project 'MovieMatcher',
   'Debug-QA' => :debug,
   'Release-QA' => :release,
   'Debug-Staging' => :debug,
   'Release-Staging' => :release,
   'Debug-Develop' => :debug
 
-target 'ReactNativeBase' do
+target 'MovieMatcher' do
 
   config = use_native_modules!
 
@@ -27,7 +27,7 @@ target 'ReactNativeBase' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'ReactNativeBaseTests' do
+  target 'MovieMatcherTests' do
     inherit! :complete
     # Pods for testing
   end

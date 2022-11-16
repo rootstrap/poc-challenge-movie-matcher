@@ -7,7 +7,7 @@ const semver = require("semver")
 
 const configMap = new Map([
   ["androidPath", "./android/app/build.gradle"],
-  ["iosPath", "./ios/ReactNativeBase/Info.plist"],
+  ["iosPath", "./ios/MovieMatcher/Info.plist"],
 ])
 
 const androidPath = configMap.get("androidPath")
