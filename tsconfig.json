@@ -40,6 +40,7 @@
     "paths": {
       "*": ["src/*"],
       "constants/*": ["src/constants/*"],
+      "components/*": ["src/components/*"],
       "screens/*": ["src/screens/*"],
       "network/*": ["src/network/*"],
       "storage/*": ["src/storage/*"],
