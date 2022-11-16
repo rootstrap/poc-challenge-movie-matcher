@@ -1,5 +1,12 @@
 import React, { useEffect } from 'react';
-import { SafeAreaView, StatusBar, Text, TouchableOpacity, useColorScheme, NativeModules } from 'react-native';
+import {
+  NativeModules,
+  SafeAreaView,
+  StatusBar,
+  Text,
+  TouchableOpacity,
+  useColorScheme,
+} from 'react-native';
 import RNBootSplash from 'react-native-bootsplash';
 
 import { AppScreens, NativeStackScreenProps, StackParamList } from 'navigation/types';
@@ -26,7 +33,7 @@ const WelcomeScreen: React.FunctionComponent<PropTypes> = () => {
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <Text accessibilityRole={'text'}>Welcome Screen</Text>
       <TouchableOpacity
-        onPress = {openDetailScreen}
+        onPress={openDetailScreen}
         testID="dummy-button"
         accessibilityState={{ disabled: false }}
         accessibilityRole={'button'}>
