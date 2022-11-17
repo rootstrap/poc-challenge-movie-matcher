@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  NativeModules,
-  SafeAreaView,
-  StatusBar,
-  Text,
-  TouchableOpacity,
-  useColorScheme,
-} from 'react-native';
+import { NativeModules, SafeAreaView, StatusBar, Text, useColorScheme } from 'react-native';
 import RNBootSplash from 'react-native-bootsplash';
 
 import icon from 'assets/icon.png';
@@ -39,11 +32,7 @@ const WelcomeScreen: React.FunctionComponent<PropTypes> = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const renderItem: ListRenderItem<Movie> = ({ item }) => (
-    <MovieCard
-      onPress={() => null}
-      movie={item}
-      // onPress={() => IntegrationModule.openDetailScreen(item)}
-    />
+    <MovieCard movie={item} onPress={() => IntegrationModule.openDetailScreen(item)} />
   );
 
   const keyExtractor = ({ id }: Movie, index: number) => String(id) || String(index);
@@ -64,14 +53,6 @@ const WelcomeScreen: React.FunctionComponent<PropTypes> = () => {
           renderItem={renderItem}
           ItemSeparatorComponent={() => <ListItemSeparator />}
         />
-        {/*   <Text accessibilityRole={'text'}>Welcome Screen</Text>
-        <TouchableOpacity
-          onPress={openDetailScreen}
-          testID="dummy-button"
-          accessibilityState={{ disabled: false }}
-          accessibilityRole={'button'}>
-          <Text>Dummy Button</Text>
-        </TouchableOpacity> */}
       </View>
     </SafeAreaView>
   );
