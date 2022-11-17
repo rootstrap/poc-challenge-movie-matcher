@@ -1,5 +1,5 @@
 import icon from 'assets/icon.png';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   NativeModules,
   SafeAreaView,
@@ -22,6 +22,7 @@ interface PropTypes extends NativeStackScreenProps<StackParamList, AppScreens.We
 const { IntegrationModule } = NativeModules;
 
 const WelcomeScreen: React.FunctionComponent<PropTypes> = () => {
+  const [movies, setMovies] = useState([]);
   const isDarkMode = useColorScheme() === 'dark';
 
   const openDetailScreen = () => {
@@ -30,6 +31,9 @@ const WelcomeScreen: React.FunctionComponent<PropTypes> = () => {
 
   useEffect(() => {
     setTimeout(() => RNBootSplash.hide({ fade: true }), 3000);
+    fetch('https://poc-movie-matcher-api.herokuapp.com/api/v1/movies')
+      .then(response => response.json())
+      .then(data => setMovies(data));
   }, []);
 
   return (
