@@ -7,6 +7,7 @@ module.exports = {
   printWidth: 100,
   importOrder: [
     '^@(.*)/(.*)$',
+    '^assets/(.*)$',
     '^components/(.*)$',
     '^constants/(.*)$',
     '^hooks/(.*)$',

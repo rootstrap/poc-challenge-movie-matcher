@@ -4,6 +4,8 @@ import { Card as RNPCard } from 'react-native-paper';
 
 import View from 'components/View';
 
+import { Movie } from 'types/index';
+
 import styles from './styles';
 
 interface PropTypes {

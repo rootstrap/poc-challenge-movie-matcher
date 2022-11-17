@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { SCREEN_BACKGROUND } from 'theme/colors';
+import { BLACK, SCREEN_BACKGROUND } from 'constants/colors';
 
 const styles = StyleSheet.create({
   body: {
@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   left: {
-    width: '33%',
+    width: '35%',
   },
   right: {
-    width: '67%',
+    width: '65%',
   },
   image: {
     width: 106,
@@ -19,8 +19,14 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: SCREEN_BACKGROUND,
   },
+  title: {
+    color: BLACK,
+    fontWeight: '600',
+    fontSize: 16,
+    lineHeight: 24,
+  },
   footer: {
-    alignSelf: 'center',
+    marginTop: 15,
   },
 });
 

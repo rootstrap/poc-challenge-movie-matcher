@@ -1,13 +1,14 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { RecommendedBy } from 'types';
 
 import Image from 'components/Image';
+
+import { Movie } from 'types/index';
 
 import styles from './styles';
 
 interface AvatarPileProps {
-  people: Array<RecommendedBy>;
+  people: Movie['recommended_by'];
 }
 
 const MAX_AVATARS = 5;

@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
 
-import { SCREEN_BACKGROUND } from 'theme/colors';
+import { SCREEN_BACKGROUND, WHITE } from 'constants/colors';
 
 export default StyleSheet.create({
   screenContainer: {
-    backgroundColor: '#F0F0F0',
     flex: 1,
+    backgroundColor: WHITE,
   },
   header: {
     alignItems: 'center',
