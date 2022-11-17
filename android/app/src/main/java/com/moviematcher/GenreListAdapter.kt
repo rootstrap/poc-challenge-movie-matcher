@@ -1,9 +1,9 @@
-package com.moviematcher.customView
+package com.moviematcher
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.swmansion.rnscreens.databinding.GenreItemBinding
+import com.moviematcher.databinding.GenreItemBinding
 
 class GenreListAdapter(var genreList: List<String> = listOf()) : RecyclerView.Adapter<GenreListAdapter.GenreViewHolder>() {
 

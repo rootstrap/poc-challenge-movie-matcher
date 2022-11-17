@@ -6,7 +6,7 @@ import android.util.Log;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.moviematcher.customView.MovieDetailActivity;
+import com.moviematcher.customView.asd.MovieDetailActivity2;
 
 public class IntegrationModule extends ReactContextBaseJavaModule {
 
@@ -22,7 +22,7 @@ public class IntegrationModule extends ReactContextBaseJavaModule {
     public void openDetailScreen(){
         Log.d("IntegrationModule", "open detail activity");
         ReactApplicationContext context = getReactApplicationContext();
-        Intent intent = new Intent(context, MovieDetailActivity.class);
+        Intent intent = new Intent(context, MovieDetailActivity2.class);
         intent.putExtra("title", "Movie name");
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);

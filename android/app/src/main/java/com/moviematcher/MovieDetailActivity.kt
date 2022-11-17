@@ -1,4 +1,4 @@
-package com.moviematcher.customView
+package com.moviematcher
 
 import android.app.Activity
 import android.os.Bundle
@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.google.android.material.snackbar.Snackbar
-import com.swmansion.rnscreens.databinding.ActivityMovieDetailBinding
-import com.swmansion.rnscreens.R
+//import com.google.android.material.snackbar.Snackbar
+import com.moviematcher.customView.RecommendedByAdapter
+import com.moviematcher.databinding.ActivityMovieDetailBinding
 
 class MovieDetailActivity : Activity() {
 
@@ -21,7 +21,7 @@ class MovieDetailActivity : Activity() {
     )
 
     private lateinit var binding: ActivityMovieDetailBinding
-    private lateinit var genresAdapter: com.moviematcher.customView.GenreListAdapter
+    private lateinit var genresAdapter: GenreListAdapter
 
     private var movie = com.moviematcher.models.Movie(
         genres = listOf("Action", "SCI-FI", "Drama"),
@@ -81,12 +81,13 @@ class MovieDetailActivity : Activity() {
     }
 
     private fun initGenresList(genres: List<String>) {
-        genresAdapter = com.moviematcher.customView.GenreListAdapter(genres)
+        genresAdapter = GenreListAdapter(genres)
         binding.genresList.adapter = genresAdapter
     }
 
     private fun onRecommendClick() {
         val isRecommended = movie.isRecommended
+        /*
         if (isRecommended) {
             Snackbar.make(binding.root, "Removed from your recommendations", Snackbar.LENGTH_LONG)
                 .show()
@@ -97,16 +98,18 @@ class MovieDetailActivity : Activity() {
                 .show()
             binding.recommendBtn.text = getString(R.string.remove_recommendation)
         }
+        */
+        
         movie = movie.copy(isRecommended = isRecommended.not())
     }
 
     private fun onAddToMyListClick() {
         val isInMyList = movie.isInMyList
         if (isInMyList) {
-            Snackbar.make(binding.root, "Removed from your watch list", Snackbar.LENGTH_LONG).show()
+            //Snackbar.make(binding.root, "Removed from your watch list", Snackbar.LENGTH_LONG).show()
             binding.addToListBtn.text = getString(R.string.add_to_my_list)
         } else {
-            Snackbar.make(binding.root, "Added to your watch list", Snackbar.LENGTH_LONG).show()
+            //Snackbar.make(binding.root, "Added to your watch list", Snackbar.LENGTH_LONG).show()
             binding.addToListBtn.text = getString(R.string.remove_my_list)
         }
 

@@ -1,4 +1,4 @@
-package com.moviematcher.customView
+package com.moviematcher
 
 data class RecommendedBy(
     val name: String,

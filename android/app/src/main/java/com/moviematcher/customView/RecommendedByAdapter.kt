@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.moviematcher.RecommendedBy
 import com.swmansion.rnscreens.databinding.ViewHolderRecommendedByBinding
 
 class RecommendedByAdapter constructor(
