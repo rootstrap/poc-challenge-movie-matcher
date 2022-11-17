@@ -1,4 +1,4 @@
-package com.swmansion.rnscreens.models
+package com.moviematcher.models
 
 data class Movie(
     val genres: List<String>,

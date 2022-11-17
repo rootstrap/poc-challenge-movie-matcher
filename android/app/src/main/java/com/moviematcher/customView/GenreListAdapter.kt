@@ -1,4 +1,4 @@
-package com.swmansion.rnscreens
+package com.moviematcher.customView
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

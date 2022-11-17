@@ -1,4 +1,4 @@
-package com.swmansion.rnscreens
+package com.moviematcher.customView
 
 import android.app.Activity
 import android.os.Bundle
@@ -9,7 +9,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.android.material.snackbar.Snackbar
 import com.swmansion.rnscreens.databinding.ActivityMovieDetailBinding
-import com.swmansion.rnscreens.models.Movie
+import com.swmansion.rnscreens.R
 
 class MovieDetailActivity : Activity() {
 
@@ -21,9 +21,9 @@ class MovieDetailActivity : Activity() {
     )
 
     private lateinit var binding: ActivityMovieDetailBinding
-    private lateinit var genresAdapter: GenreListAdapter
+    private lateinit var genresAdapter: com.moviematcher.customView.GenreListAdapter
 
-    private var movie = Movie(
+    private var movie = com.moviematcher.models.Movie(
         genres = listOf("Action", "SCI-FI", "Drama"),
         title = "Wakanda forever",
         id = 1.0,
@@ -81,7 +81,7 @@ class MovieDetailActivity : Activity() {
     }
 
     private fun initGenresList(genres: List<String>) {
-        genresAdapter = GenreListAdapter(genres)
+        genresAdapter = com.moviematcher.customView.GenreListAdapter(genres)
         binding.genresList.adapter = genresAdapter
     }
 

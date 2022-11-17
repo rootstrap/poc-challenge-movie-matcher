@@ -1,4 +1,4 @@
-package com.swmansion.rnscreens
+package com.moviematcher.customView
 
 data class RecommendedBy(
     val name: String,
