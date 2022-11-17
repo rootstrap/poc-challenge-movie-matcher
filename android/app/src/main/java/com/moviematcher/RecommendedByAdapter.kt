@@ -4,12 +4,11 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.moviematcher.databinding.ViewHolderRecommendedByBinding
-import java.net.URI
+import com.swmansion.rnscreens.databinding.ViewHolderRecommendedByBinding
 
-class RecommendedByAdapter: RecyclerView.Adapter<RecommendedByAdapter.RecommendedByViewHolder>() {
-
-    var recommendedByList: List<RecommendedBy> = listOf()
+class RecommendedByAdapter constructor(
+    private val recommendedByList: List<RecommendedBy>
+): RecyclerView.Adapter<RecommendedByAdapter.RecommendedByViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecommendedByViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
