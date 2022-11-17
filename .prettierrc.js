@@ -7,6 +7,7 @@ module.exports = {
   printWidth: 100,
   importOrder: [
     '^@(.*)/(.*)$',
+    '^assets/(.*)$',
     '^components/(.*)$',
     '^constants/(.*)$',
     '^hooks/(.*)$',
@@ -14,6 +15,8 @@ module.exports = {
     '^network/(.*)$',
     '^screens/(.*)$',
     '^storage/(.*)$',
+    '^theme/(.*)$',
+    '^types/(.*)$',
     '^[./*]',
   ],
   importOrderSeparation: true,

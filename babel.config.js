@@ -25,6 +25,7 @@ module.exports = {
           hooks: './src/hooks',
           navigation: './src/navigation',
           types: './src/types',
+          theme: './src/theme',
         },
       },
     ],

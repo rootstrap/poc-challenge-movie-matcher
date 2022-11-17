@@ -1,9 +1,11 @@
 import { StyleSheet } from 'react-native';
 
+import { SCREEN_BACKGROUND, WHITE } from 'constants/colors';
+
 export default StyleSheet.create({
   screenContainer: {
-    backgroundColor: '#F0F0F0',
     flex: 1,
+    backgroundColor: WHITE,
   },
   header: {
     alignItems: 'center',
@@ -25,5 +27,6 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: SCREEN_BACKGROUND,
   },
 });
