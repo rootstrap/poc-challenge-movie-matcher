@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
   },
   right: {
     width: '65%',
+    justifyContent: 'space-between',
   },
   image: {
     width: 106,

@@ -39,7 +39,11 @@ const WelcomeScreen: React.FunctionComponent<PropTypes> = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const renderItem: ListRenderItem<Movie> = ({ item }) => (
-    <MovieCard movie={item} onPress={() => IntegrationModule.openDetailScreen(item)} />
+    <MovieCard
+      onPress={() => null}
+      movie={item}
+      // onPress={() => IntegrationModule.openDetailScreen(item)}
+    />
   );
 
   const keyExtractor = ({ id }: Movie, index: number) => String(id) || String(index);
