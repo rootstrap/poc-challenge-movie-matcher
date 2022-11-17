@@ -120,10 +120,10 @@ public class MovieDetailActivity2 extends Activity {
     void onAddToMyListClick() {
         Boolean isInMyList = movie.isInMyList;
         if (isInMyList) {
-            //Snackbar.make(binding.root, "Removed from your watch list", Snackbar.LENGTH_LONG).show()
+            Toast.makeText(this, "Removed from your watch list", Toast.LENGTH_LONG).show();
             binding.addToListBtn.setText(getString(R.string.add_to_my_list));
         } else {
-            //Snackbar.make(binding.root, "Added to your watch list", Snackbar.LENGTH_LONG).show()
+            Toast.makeText(this, "Added to your watch list", Toast.LENGTH_LONG).show();
             binding.addToListBtn.setText(getString(R.string.remove_my_list));
         }
 
