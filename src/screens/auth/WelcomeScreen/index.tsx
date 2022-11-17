@@ -1,19 +1,18 @@
-import icon from 'assets/icon.png';
 import React, { useEffect, useState } from 'react';
-import {
-  NativeModules,
-  SafeAreaView,
-  StatusBar,
-  Text,
-  TouchableOpacity,
-  View,
-  useColorScheme,
-} from 'react-native';
+import { NativeModules, SafeAreaView, StatusBar, Text, useColorScheme } from 'react-native';
 import RNBootSplash from 'react-native-bootsplash';
 
+import icon from 'assets/icon.png';
+
+import FlatList, { ListRenderItem } from 'components/FlatList';
 import Image from 'components/Image';
+import ListItemSeparator from 'components/ListItemSeparator';
+import MovieCard from 'components/MovieCard';
+import View from 'components/View';
 
 import { AppScreens, NativeStackScreenProps, StackParamList } from 'navigation/types';
+
+import { Movie } from 'types/index';
 
 import styles from './styles';
 
@@ -22,19 +21,21 @@ interface PropTypes extends NativeStackScreenProps<StackParamList, AppScreens.We
 const { IntegrationModule } = NativeModules;
 
 const WelcomeScreen: React.FunctionComponent<PropTypes> = () => {
-  const [movies, setMovies] = useState([]);
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const openDetailScreen = () => {
-    IntegrationModule.openDetailScreen();
-  };
-
   useEffect(() => {
     setTimeout(() => RNBootSplash.hide({ fade: true }), 3000);
     fetch('https://poc-movie-matcher-api.herokuapp.com/api/v1/movies')
       .then(response => response.json())
-      .then(data => setMovies(data));
+      .then(data => setMovies(data?.movies || []));
   }, []);
+
+  const [movies, setMovies] = useState([]);
+  const isDarkMode = useColorScheme() === 'dark';
+
+  const renderItem: ListRenderItem<Movie> = ({ item }) => (
+    <MovieCard movie={item} onPress={() => IntegrationModule.openDetailScreen(item)} />
+  );
+
+  const keyExtractor = ({ id }: Movie, index: number) => String(id) || String(index);
 
   return (
     <SafeAreaView style={styles.screenContainer}>
@@ -46,14 +47,12 @@ const WelcomeScreen: React.FunctionComponent<PropTypes> = () => {
       </View>
       <View style={styles.container}>
         <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        <Text accessibilityRole={'text'}>Welcome Screen</Text>
-        <TouchableOpacity
-          onPress={openDetailScreen}
-          testID="dummy-button"
-          accessibilityState={{ disabled: false }}
-          accessibilityRole={'button'}>
-          <Text>Dummy Button</Text>
-        </TouchableOpacity>
+        <FlatList
+          data={movies}
+          keyExtractor={keyExtractor}
+          renderItem={renderItem}
+          ItemSeparatorComponent={() => <ListItemSeparator />}
+        />
       </View>
     </SafeAreaView>
   );

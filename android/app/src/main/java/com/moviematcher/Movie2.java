@@ -1,5 +1,6 @@
 package com.moviematcher;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Movie2 {
@@ -12,7 +13,7 @@ public class Movie2 {
     public Boolean isRecommended;
 
     public Movie2(
-            List<String> genres,
+            ArrayList<String> genres,
             Double id,
             String title,
             String overview,

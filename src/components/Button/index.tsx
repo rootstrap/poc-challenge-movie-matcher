@@ -7,7 +7,7 @@ import getStyles from './styles';
 
 type PropTypes = {
   label: string;
-  style: object;
+  style?: object;
   handleOnPress: () => void;
   color?: string;
   isInverted?: boolean;
