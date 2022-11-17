@@ -7,8 +7,8 @@
     </style>
 
     <style name="BootTheme" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/bootsplash_background</item>
-        <item name="windowSplashScreenAnimatedIcon">@mipmap/bootsplash_logo</item>
+        <item name="windowSplashScreenBackground">#260065</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/logo2</item>
         <item name="postSplashScreenTheme">@style/AppTheme</item>
     </style>
 
