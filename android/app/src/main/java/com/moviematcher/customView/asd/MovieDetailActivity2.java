@@ -19,6 +19,7 @@ import com.moviematcher.customView.GenreListAdapter2;
 import com.moviematcher.customView.RecommendedByAdapter2;
 import com.moviematcher.databinding.ActivityMovieDetailBinding;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class MovieDetailActivity2 extends Activity {
     private ActivityMovieDetailBinding binding;
     private GenreListAdapter2 genresAdapter;
     Movie2 movie = new Movie2(
-            Arrays.asList("Action", "SCI-FI", "Drama"),
+            new ArrayList(),
             1.0,
             "Wakanda forever",
             "Queen Ramonda, Shuri, M'Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T'Challa's death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.",
@@ -48,6 +49,18 @@ public class MovieDetailActivity2 extends Activity {
         super.onCreate(savedInstanceState);
         binding = ActivityMovieDetailBinding.inflate(LayoutInflater.from(this));
         setContentView(binding.getRoot());
+        if(getIntent().hasExtra("overview")){
+            movie.overview = getIntent().getStringExtra("overview");
+        }
+        if(getIntent().hasExtra("poster_path")){
+            movie.posterPath = getIntent().getStringExtra("poster_path");
+        }
+        if(getIntent().hasExtra("genres")){
+            movie.genres = getIntent().getStringArrayListExtra("genres");
+        }
+        if(getIntent().hasExtra("recommended_by")){
+            fakeList = getIntent().getParcelableArrayListExtra("recommended_by");
+        }
         initView();
     }
 
