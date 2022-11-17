@@ -14,6 +14,8 @@ module.exports = {
     '^network/(.*)$',
     '^screens/(.*)$',
     '^storage/(.*)$',
+    '^theme/(.*)$',
+    '^types/(.*)$',
     '^[./*]',
   ],
   importOrderSeparation: true,
