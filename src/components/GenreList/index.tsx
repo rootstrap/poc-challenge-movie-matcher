@@ -1,7 +1,8 @@
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 import FlatList, { ListRenderItem, TItem } from 'components/FlatList';
+import ListItemSeparator from 'components/ListItemSeparator';
 
 import { Movie } from 'types/index';
 
@@ -9,40 +10,37 @@ import styles from './styles';
 
 type PropTypes = { genres: Movie['genres'] };
 
+const MAX_GENRES = 2;
+
 const GenreList: React.FunctionComponent<PropTypes> = ({ genres }) => {
   const renderItem: ListRenderItem<string> = ({ item }) => (
-    <View style={styles.listContainer}>
-      <Text key={item} style={styles.genreText}>
-        {item.toUpperCase()}
-      </Text>
-    </View>
+    <Text key={item} style={styles.genreText}>
+      {item.toUpperCase()}
+    </Text>
   );
 
   const keyExtractor = (genre: string, index: number) => genre || String(index);
+  const data = genres.slice(0, MAX_GENRES);
   return (
     <FlatList
-      data={genres as TItem[]}
+      data={data as TItem[]}
+      style={styles.listContainer}
+      contentContainerStyle={styles.listContent}
       keyExtractor={keyExtractor}
       renderItem={renderItem}
       horizontal
       keyboardShouldPersistTaps="handled"
-      //  ItemSeparatorComponent={() => <ListItemSeparator />}
+      ItemSeparatorComponent={() => <ListItemSeparator style={styles.separator} />}
+      ListFooterComponent={() =>
+        genres?.length > MAX_GENRES ? (
+          <View style={styles.moreGenresContainer}>
+            <Text>+{genres.length - MAX_GENRES}</Text>
+          </View>
+        ) : null
+      }
+      showsHorizontalScrollIndicator={false}
     />
   );
 };
-
-/* const GenreList: React.FunctionComponent<PropTypes> = ({ genres }) => {
-  return (
-    <ScrollView horizontal>
-      <View style={styles.listContainer}>
-        {genres.map(genre => (
-          <Text key={genre} style={styles.genreText}>
-            {genre.toUpperCase()}
-          </Text>
-        ))}
-      </View>
-    </ScrollView>
-  );
-}; */
 
 export default GenreList;

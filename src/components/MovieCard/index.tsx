@@ -29,8 +29,10 @@ const MovieCard: React.FunctionComponent<PropTypes> = ({ movie, onPress }) => {
           <Image style={styles.image} source={{ uri }} resizeMode="cover" />
         </View>
         <View style={styles.right}>
-          <Text style={styles.title}>{title}</Text>
-          <GenreList genres={genres} />
+          <View>
+            <Text style={styles.title}>{title}</Text>
+            <GenreList genres={genres} />
+          </View>
           <AvatarPile people={people} />
         </View>
       </View>
