@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Toast;
 
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -105,13 +106,11 @@ public class MovieDetailActivity2 extends Activity {
     void onRecommendClick() {
         Boolean isRecommended = movie.isRecommended;
         if (isRecommended) {
-            //Snackbar.make(binding.root, "Removed from your recommendations", Snackbar.LENGTH_LONG)
-             //   .show()
+            Toast.makeText(this, "Removed from your recommendations", Toast.LENGTH_LONG).show();
             binding.recommendBtn.setText(getString(R.string.recommend));
 
         } else {
-            //Snackbar.make(binding.root, "Added to your recommendations", Snackbar.LENGTH_LONG)
-            //    .show()
+            Toast.makeText(this, "Added to your recommendations", Toast.LENGTH_LONG).show();
             binding.recommendBtn.setText(getString(R.string.remove_recommendation));
         }
 

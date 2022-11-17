@@ -14,8 +14,8 @@ public class Movie2 {
     public Movie2(
             List<String> genres,
             Double id,
-            String overview,
             String title,
+            String overview,
             String posterPath,
             Boolean isInMyList,
             Boolean isRecommended
